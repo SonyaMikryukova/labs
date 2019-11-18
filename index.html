@@ -6,11 +6,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<!-- title -->
-		<title>{Дифференциальное исчисление}</title>
+		<title>{Алгебра}</title>
 
 		<!-- load style -->
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/moon.css">
+		<link rel="stylesheet" href="css/theme/sky.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -60,420 +60,245 @@
 			<div class="slides">
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						Дифференциальное исчисление
+						Алгебра
 						==================
 						
 						
 						Note:
-						Дифференциальное исчисление
+						Алгебра
 					</script>
 				</section>
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						Предел функции
+						Матрицы
 						--------------
 						
 						
 						Note:
-						Предел функции
+						Матрицы
 					</script>
 				</section>
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						### Определение предела функции
+						### Определение матрицы
 
-						#### По Гейне
-						$$
-						A = \lim_{x \rightarrow a}{f(x)}
-						\Leftrightarrow \forall \{ x_n \}
-						\in X, \{x_n\} \rightarrow a
-						\Rightarrow \{ f(x_n)\} \rightarrow A
-						$$
+						Матрицей размера $n \times m$ называется прямоугольная таблица специального вида, состоящая из $n$ строк и $m$ столбцов, заполненная числами, где 
+						количество строк и столбцов задают размеры матрицы.
 
-						#### По Коши
-						$$
-							A = \lim_{x \rightarrow x_0}{f(x)}
-							\Leftrightarrow \forall \varepsilon > 0 \,
-							\exists \delta = \delta (\varepsilon) > 0:
-						$$
-						$$
-							\forall x_0 < \| x - x_0\| < \delta
-							\Rightarrow |f(x) - A | <  \varepsilon
-						$$
+						Обозначают $A_{n \times m}$.
 
-						#### Окрестное определение
+						Note:
+						Определение матрицы
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						### Определение матрицы
+
+						Числа, составляющие матрицу, называются <em>элементами матрицы</em>.
+						Их удобно снабжать двумя индексами $a_{ij}$: первый указывает номер строки, а второй – номер столбца.
+
 						$$
-							A = \lim_{x \rightarrow a}{f(x)}
-							\Leftrightarrow
-							\forall O(A) \exists \dot{O}(x_0):
-							f(\dot{O}()x_0) \subset O(A)
+						A_{n \times m } = \begin{pmatrix}
+							a_{11} & a_{12} & \ldots & a_{1m}\\
+							a_{21} & a_{22} & \ldots & a_{2m}\\
+							&&\ldots& \\
+							a_{n1} & a_{n2} & \ldots & a_{nm}
+						\end{pmatrix}
 						$$
 
 						Note:
-						Определение по Гейне: Значение A - это предел функции f(x) в точке x нулевое,
-						если из любой последовательности X_n из X стремящееся к точке A следует,
-						что последовательность соответствующих функций f(x_n) стремится к A;
-
-						Определение по Коши: Значение A - это предел функции f(x) в точке x нулевое,
-						если для любого взятого положительного числа епсилон, найдется отвечающее
-						ему положительное число дельта от епсилон, такое что для всех аргументов x,
-						удовлетворяющих условию: модуль от разности x - x_0 лежит в пределах от 0 до дельта,
-						следует,что выполняется равенство: модуль разности f(x) - A  меньше епсилон;
-
-						Окрестность определение: Значение A - это предел функции f(x) в точке x нулевое, 
-						если для любой окрестности в точке А чуществует проколотая окрестность точки x_0 такая,
-						что образ это окрестности лежит в окрестности точки А;
-
+						Элементы матрицы
 					</script>
 				</section>
-					<section data-markdown data-separator-notes="^Note:">
-						<script type="text/template">
-							Производная
-							--------------
-														
-							Note:
-							Производная
-						</script>
-					</section>
 
-					<section data-markdown data-separator-notes="^Note:">
-						<script type="text/template">
-							### Определение 
+				
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						### Виды матриц 
 
-							$$
-								f'(x_0) = \lim{\Delta x \rightarrow 0}
-								{\dfrac{\Delta y}{\Delta x}} = 
-								\lim_{\Delta x \rightarrow 0}
-								{\dfrac{ f(x_0+\Delta x) - f(x_0)}{\Delta x}}
-							$$
-													
-							Note:
-							Производная - это предел отношения приращении функции к приращению аргумента,
-							при стремлении последнего к нулю;
-						</script>					
-					</section>
+						Матрица, в которой число строк не равно числу столбцов, называется <em>прямоугольной</em>
+						
+						Матрица называется <em>квадратной</em>, если число строк и столбцов совпадает
 
-					<section data-markdown data-separator-notes="^Note:">
-						<script type="text/template">
-							Пример:
-							-------------- 
+						$$
+						A_{n \times n } = \begin{pmatrix}
+							a_{11} & a_{12} & \ldots & a_{1n}\\
+							a_{21} & a_{22} & \ldots & a_{2n}\\
+							&&\ldots& \\
+							a_{n1} & a_{n2} & \ldots & a_{nn}
+						\end{pmatrix}
+						$$
 
-							$$
-								\lim_{x \rightarrow \infty} \dfrac{2x^2-3x-5}{1+x+3x^2}
-								= \dfrac{\infty}{\infty}
-							$$
-							
-							$$
-								\lim_{x \rightarrow \infty} \dfrac{\dfrac{2x^2-3x-5}{x^2}}{\dfrac{1+x+3x^2}{x^2}}
-								= \lim_{x \rightarrow \infty}\dfrac{\dfrac{2x^2}{x^2} - \dfrac{3x}{x^2}-\dfrac{5}{x^2}}{\dfrac{1}{x^2}+\dfrac{x}{x^2}+\dfrac{3x^2}{x^2}}=
-							$$
-							$$
-								= \lim_{x \rightarrow \infty} \dfrac{\dfrac{2x^2}{x^2} - \dfrac{3x}{x^2}^{\rightarrow 0}-\dfrac{5}{x^2}^{\rightarrow 0}}
-								{\dfrac{1}{x^2}^{\rightarrow 0}+\dfrac{x}{x^2}^{\rightarrow 0}+\dfrac{3x^2}{x^2}}
-								= \lim_{x \rightarrow \infty}\dfrac{2}{3} = \dfrac{2}{3}
-							$$
-													
-							Note:
-							Производная
-						</script>					
-					</section>
+						Число строк(столбцов) называют <em>порядком матрицы</em>.
+						Note:
+						Прямоугольная матрица 
+					</script>
+				</section>
 
-					<section data-markdown data-separator-notes="^Note:">
-						<script type="text/template">
-							### Способы записи производных
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						### Виды матриц 
 
-							#### По Ньютону
-							$$
-								\dot{x}(t_0)
-							$$
+						Матрица, у которой всего одна строка, называется <em>матрицей – строкой</em> (или строковой)
 
-							#### По Эйлеру
-							$$
-								D^n f(x_0)
-							$$
+						$$
+						A_{1 \times n} = \begin{pmatrix}
+							a_{11} & a_{12} & \ldots & a_{1n}
+						\end{pmatrix}
+						$$
 
-							#### По Лейбницу
-							$$
-								\dfrac{d^nf}{dx^n}(x_0)
-							$$
+						Матрица, у которой всего один столбец, называется <em>матрицей – столбцом</em> (или столбцовой)
 
-							Note:
-							На слайде представлены 4 способа записи производных
-						</script>					
-					</section>
-					<section data-markdown data-separator-notes="^Note:">
-						<script type="text/template">
-							### Способы записи производных
+						$$
+						A_{n \times 1} =\begin{pmatrix}
+							a_{11}\\
+							a_{21} \\
+							\ldots\\
+							a_{n1}
+						\end{pmatrix}
+						$$
+						Note:
+						Строковые и столбцовые матрицы
+					</script>
+				</section>
 
-							#### По Лагранжу
-							$$
-								f'(x_0) = f^{(1)}(x_0) = f^{(I)}(x_0)
-							$$
-							$$
-								f''(x_0),f'''(x_0),f^{(IV)}(x_0)
-							$$
-													
-							Note:
-							На слайде представлены 4 способа записи производных
-						</script>					
-					</section>
-					<section data-markdown data-separator-notes="^Note:">
-						<script type="text/template">
-							### Правила дифференцирования 
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						### Виды матриц 
 
-							$$
-								(C(f(x)))' = C \cdot f'(x)
-							$$
-							$$
-								(f(x) \pm g(x))' = f'(x) \pm g'(x)
-							$$
-							$$
-								(f(x) \cdot g(x))' = f'(x) \cdot g(x) + f(x) \cdot g'(x)
-							$$
-							$$
-								\left(\dfrac{f(x)}{g(x)} \right)' = \dfrac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{g(x)^2}
-							$$
-							$$
-								(f(g(x)))' = f'(g(x)) \cdot g'(x)
-							$$
-													
-							Note:
-							1)Константу можно вынести за знак производной  
-							2)Производная суммы или разности равна сумме производных или разности  
-							3)Производная произведения равна произведению первого на второе плюс производная второго на первого    
-							4)Производная частного равна отношению разности производной числителя на знаменатель  
-							и прозводной знаменателя на числитель к квадрату знаменателя  
-							5)Производная сложной функции равна производной внешней функции на производную внутренней  
-						</script>					
-					</section>
+						Матрица, все элементы которой равны нулю, называется <em>нулевой</em>
 
-					<section data-markdown data-separator-notes="^Note:">
-						<script type="text/template">
-							Пример:
-							-------------- 
+						$$
+						0 = \begin{pmatrix}
+						0 & 0 & \ldots & 0
+						\end{pmatrix}
+						$$
+						$$
+						0 = \begin{pmatrix}
+						0 & 0 & \ldots & 0\\
+						&& \ldots & \\
+						0 & 0 & \ldots & 0
+						\end{pmatrix}
+						$$
 
-							$$
-							y' = (3\sin(x))' = 3(\sin(x)) = 3\cos(x)
-							$$
-							$$
-							y' = (x^2+7x-e^x)' = (x^2)'+7(x)'-(e^x)'= 2x+7-e^x
-							$$
-							$$
-							y' = (x\ln(x))' = x'\ln(x)+x(\ln(x))' = \ln(x)+x\dfrac{1}{x} = \ln(x) + 1
-							$$
-							$$
-							y' = \left(\dfrac{\sin(x)}{x}\right)' = \dfrac{(\sin(x))'x - \sin(x)x'}{x^2} = \dfrac{x\cos(x) - \sin(x)}{x^2}
-							$$
+						Note:
+						Нулевая матрица 
+					</script>
+				</section>
 
-							Note:
-							Примеры решения производных
-						</script>					
-					</section>
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						### Виды матриц 
 
-					<section data-markdown data-separator-notes="^Note:">
-						<script type="text/template">
-							Пример:
-							-------------- 
+						<em>Главной диагональю</em> квадратной матрицы назовём диагональ, идущую из левого верхнего в правый нижний угол
 
-							$$
-							y' = (\cos(x^2))' = -\sin(x^2)(x^2)' = -2x\sin(x^2)
-							$$
-							
-																				
-							Note:
-							Примеры решения производных
-						</script>					
-					</section>
+						Квадратная матрица, у которой все элементы, лежащие ниже главной диагонали, равны нулю, называется <em>верхней квадратной матрицей</em>
 
-					<section data-markdown data-separator-notes="^Note:">
-						<script type="text/template">
-							### Частные производные
+						$$
+						A_{n \times n } = \begin{pmatrix}
+							a_{11} & a_{12} & a_{13} & \ldots & a_{1n}\\
+							0 & a_{22} & a_{23} & \ldots & a_{2n}\\
+							0 & 0 & a_{33} & \ldots & a_{3n}\\
+							&& \ldots & \\
+							0 & 0 & 0 & \ldots & a_{nn}
+						\end{pmatrix}
+						$$
+						
+						Note:
+						Верхняя квадратная матрица 
+					</script>
+				</section>
 
-							$$
-								\dfrac{\partial f}{\partial x_k}
-								(a_1, \cdots, a_n) =
-							$$
-							$$
-								 = \lim_{\Delta x \rightarrow 0}
-								{\dfrac{f(a_1, \cdots, a_k + \Delta, \cdots, a_n) - f(a_1, \cdots, a_k, \cdots, a_n)}{\Delta x}}
-							$$
-													
-							Note: Частная производная  - это отношение приращения функции по выбранной переменной к приращению этой переменной,
-							при стремлении этого приращения к нулю
-						</script>					
-					</section>
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						### Виды матриц 
 
-					<section data-markdown data-separator-notes="^Note:">
-						<script type="text/template">
-							Пример:
-							--------------
+						Квадратная матрица, у которой все элементы, лежащие выше главной диагонали, равны нулю, называется <em>нижней квадратной матрицей</em>
 
-							$$
-								z(x,y) = x^2 - y^2 + 2xy + 5
-							$$
-							$$
-								\dfrac{\partial z}{\partial x} = 2x + 2y
-							$$
-							$$
-								\dfrac{\partial z}{\partial y} = -2y + 2x
-							$$
-													
-							Note: 
-							Примеры решения частных производных
-						</script>					
-					</section>
+						$$
+						A_{n \times n } = \begin{pmatrix}
+							a_{11} & 0 & 0 & \ldots & 0 \\
+							a_{21} & a_{12} & 0 & \ldots & 0\\
+							a_{31} & a_{32} & a_{33} & \ldots & 0\\
+							&& \ldots &\\
+							a_{n1} & a_{n2} & a_{n3} & \ldots & a_{nn}\\
+						\end{pmatrix}
+						$$
+						
+						Note:
+						Нижняя квадратная матрица 
+					</script>
+				</section>
 
-					<section data-markdown data-separator-notes="^Note:">
-						<script type="text/template">
-							### Полный дифференциал 
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						### Виды матриц 
 
-							$$
-								z = f(x_0,x_1, \cdots, x_n)
-							$$
-							$$
-								dz = f'_{x_0}(x_0,x_1, \cdots, x_n)\,dx_0 +
-								f'_{x_1}(x_0,x_1, \cdots, x_n)\,dx_1 + 
-								\cdots + 
-							$$
-							$$
-								f'_{x_n}(x_0,x_1, \cdots, x_n)\,dx_n 
-							$$
-													
-							Note:
-							Полный дифференциал - это сумма частных производных по каждой переменной
-						</script>					
-					</section>
-					<section data-markdown data-separator-notes="^Note:">
-						<script type="text/template">
-							Пример:
-							--------------
+						Квадратная матрица, у которой все элементы,кроме, быть может, стоящих на главной диагонали, равны нулю, <em>называется диагональной матрицей</em>
 
-							$$
-								z = e^{xy}
-							$$
-							$$
-								\dfrac{\partial z}{\partial x} = e^{xy}y
-							$$
-							$$
-								\dfrac{\partial z}{\partial y} = e^{xy}x
-							$$
-							$$
-								dz = ye^{xy}\,dx + xe^{xy}\,dy = e^{xy}(y\,dx + x\,dy)
-							$$
-													
-							Note: 
-							Примеры решения полного дифференциала
-						</script>					
-					</section>
+						$$
+						A_{n \times n } = \begin{pmatrix}
+							a_{11} & 0 & 0 & \ldots & 0 \\
+							0 & a_{12} & 0 & \ldots & 0\\
+							0 & 0 & a_{33} & \ldots & 0\\
+							&& \ldots &  \\
+							0 & 0 & 0 & \ldots & a_{nn}\\
+						\end{pmatrix}
+						$$
+						
+						Note:
+						Диагональная матрица 
+					</script>
+				</section>
 
-					<section data-markdown data-separator-notes="^Note:">
-						<script type="text/template">
-							### Физический смысл производной 
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						### Виды матриц 
 
-							Если точка движется вдоль оси $x$ и ее координаты изменяются по закону $x(t)$,
-							то мгновенная скорость $v(t) = x'(t)$, а ускорение 
-							$a(t) = v'(t) = x''(t)$	
+						Диагональная матрица, у которой все диагональные элементы равны единице, называется <em>единичной матрицей</em> и обозначается буквой $E$
 
-							Note:
-							Первая производная в точке - есть мгновенная скорость этой точки
-							в момент времени t, двигающейся по кривой x(t)  
-							Вторая производная в точке - есть ускорение в этой точке в момент времени t,
-							двигающейся по прямой x(t)
-						</script>					
-					</section>
+						$$
+						E  = \begin{pmatrix}
+							1 & 0 & 0 & \ldots & 0 \\
+							0 & 1 & 0 & \ldots & 0\\
+							0 & 0 & 1 & \ldots & 0\\
+							&& \ldots &  \\
+							0 & 0 & 0 & \ldots & 1\\
+						\end{pmatrix}
+						$$
+						
+						Note:
+						Единичная матрица 
+					</script>
+				</section>
 
-					<section data-markdown data-separator-notes="^Note:">
-						<script type="text/template">
-							Пример:
-							--------------
-							Дано: Материальная точка движется прямолинейно вдоль оси $x$ по закону $x(t) = 6t^2 - 48t + 17$,
-							где $x(t)$ - расстояние от точки отсчета в метрах, $t$ - время в секундах, измеренное с начала движения;
+				</section>
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						Операции с матрицами
+						---------------------
+												
+						Note:
+						Операции с матрицами 
+					</script>
+				</section>
 
-							Найти: скорость и ускорение в момент времени $t = 9$ секунд.
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						### Сумма матриц
+						
+						
+						Note:
+						Суммой двух матриц называется матрица, каждый элемент которой равен сумме соответствующих элементов складываемых матриц. 
+						Складывать можно только матрицы с одинаковой размерностью, то есть число строк и столбцов первой матрицы должно быть равно 
+						числу строк и столбцов второй матрицы.
+					</script>
+				</section>
 
-							Note: 
-							Примеры на физический смысл
-						</script>					
-					</section>
 
-					<section data-markdown data-separator-notes="^Note:">
-						<script type="text/template">
-							Пример:
-							--------------
-
-							Решение:
-
-							$$
-								v(t) = x'(t) = (6t^2 - 48t + 17)' = 12t - 48
-							$$
-							$$
-								v(9) = 12 \cdot 9 - 48 = 60 \text{м/с}
-							$$
-							$$
-								a(t) = x''(t) = (12t - 48)' = 12
-							$$
-							$$
-								a(9) = 12 \text{м/с}^2
-							$$
-													
-							Note: 
-							Примеры на физический смысл
-						</script>					
-					</section>
-
-					<section data-markdown data-separator-notes="^Note:">
-						<script type="text/template">
-							### Геометрический смысл производной 
-
-							Производная точки $x_0$ равна тангенсу угла наклона касательной к графику функции $f(x)$ в этой точке
-							$$
-								f'(x_0) = \tan(\alpha), \text{где} \alpha - \text{угол наклона касательной}
-							$$
-																		
-							Note:
-							Производная в точке $x_0$ - есть тангенс угла наклона касательной к функции f(x)
-						</script>					
-					</section>
-
-					<section data-markdown data-separator-notes="^Note:">
-						<script type="text/template">
-							### Уравнение касательной
-							
-							$$
-								y_{k} = f'(x_0)(x-x_0) + f(x_0)
-							$$
-																		
-							Note:
-							Уравнение касательной задается производной функции в точке касания умноженную на разность
-							 переменной и точки касания плюс значение функции в точке касания
-						</script>					
-					</section>
-
-					<section data-markdown data-separator-notes="^Note:">
-						<script type="text/template">
-							Пример:
-							--------------
-
-							Задача: составить уравнение касательной к графику функции $f(x) = \dfrac{1}{3}x^3 - 4x + 1$ в точке $x_0 = 3 $
-
-							Решение:							
-							$$
-								f'(x) = x^2 - 4
-							$$
-							$$
-								f'(3) = 3^2 - 4 = 5
-							$$
-							$$
-								f(3) = \dfrac{1}{3}3^3 - 4\cdot3 + 1 = 9 - 12 + 1 = -2
-							$$
-							$$
-								y_{k} = 5(x-3) - 2 = 5x - 17
-							$$
-																		
-							Note:
-							Примеры на уравнения касательной 
-						</script>					
-					</section>
+				
 
 					<section data-markdown data-separator-notes="^Note:">
 						<script type="text/template">
