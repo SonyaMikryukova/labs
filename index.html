@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<!-- title -->
-		<title>{Алгебра}</title>
+		<title>Алгебра</title>
 
 		<!-- load style -->
 		<link rel="stylesheet" href="css/reveal.css">
@@ -17,46 +17,49 @@
 
 		<!-- Printing and PDF exports -->
 		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
+				let link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 
 		<style>
-			.left {
-				float: left;
-				margin-left: 60px;
-			}
-			.right {
-				float: right;
-				margin-right: 60px;
-			}
-			.clear {
-				clear: both;
-			}
-			.reveal table.tic-toe {
-				border-collapse: separate !important;
-			}
-			td {
-				width: 40px;
-				height: 40px;
-				text-align: center !important;
-			}
-			td:nth-child(2) {
-				border-left: 1px solid white;
-				border-right: 1px solid white;
-			}
-
-			.formula {
-				margin-bottom: 10px !important;
-			}
-
+		.formula {
+			margin-bottom: 10px !important;
+		}
+		.offscreen {
+			clip: rect(1px 1px 1px 1px);
+			clip: rect(1px, 1px, 1px, 1px);
+			height: 1px;
+			overflow: hidden;
+			position: absolute;
+			white-space: nowrap;
+			width: 1px;
+		}
+		.offscreen:focus {
+			position: relative;
+			clip: auto;
+			width: auto;
+			height: auto;
+			overflow: auto;
+		}
 		</style>
+
 	</head>
 	<body>
 		<div class="reveal">
+
+				<div class="chalkboard-button" id="toggle-chalkboard" 
+				style="position: fixed; z-index: 30; font-size: 22px;
+				left: 60px; bottom: 32px;" >
+				<a href="#" id="noteswitch" title="Включение/отключение
+					заметок к слайду">
+					<i class="fa fa-sticky-note" aria-label="
+					Заметки к слайду"></i>
+				</a>
+			</div>
+
 			<div class="slides">
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
@@ -83,9 +86,9 @@
 						### Определение матрицы
 
 						Матрицей размера $n \times m$ называется прямоугольная таблица специального вида, состоящая из $n$ строк и $m$ столбцов, заполненная числами, где 
-						количество строк и столбцов задают размеры матрицы.
+						количество строк и столбцов задают размеры матрицы
 
-						Обозначают $A_{n \times m}$.
+						Обозначают $A_{n \times m}$
 
 						Note:
 						Определение матрицы
@@ -97,7 +100,7 @@
 						### Определение матрицы
 
 						Числа, составляющие матрицу, называются <em>элементами матрицы</em>.
-						Их удобно снабжать двумя индексами $a_{ij}$: первый указывает номер строки, а второй – номер столбца.
+						Их удобно снабжать двумя индексами $a_{ij}$: первый указывает номер строки, а второй – номер столбца
 
 						$$
 						A_{n \times m } = \begin{pmatrix}
@@ -109,45 +112,126 @@
 						$$
 
 						Note:
-						Элементы матрицы
+						Определение элементов матрицы
 					</script>
 				</section>
-
-				
+				<section data-markdown data-separator-notes="^Note:">
+						<script type="text/template">
+							Виды матриц
+							--------------
+							
+							
+							Note:
+							Виды матриц
+						</script>
+					</section>
+			
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						### Виды матриц 
+						### Прямоугольная матрица
 
 						Матрица, в которой число строк не равно числу столбцов, называется <em>прямоугольной</em>
+						$$
+							A_{n \times n } = \begin{pmatrix}
+								a_{11} & a_{12} & \ldots & a_{1n}\\
+								a_{21} & a_{22} & \ldots & a_{2n}\\
+								&&\ldots& \\
+								a_{m1} & a_{m2} & \ldots & a_{mn}
+							\end{pmatrix}
+						$$	
 						
-						Матрица называется <em>квадратной</em>, если число строк и столбцов совпадает
-
-						$$
-						A_{n \times n } = \begin{pmatrix}
-							a_{11} & a_{12} & \ldots & a_{1n}\\
-							a_{21} & a_{22} & \ldots & a_{2n}\\
-							&&\ldots& \\
-							a_{n1} & a_{n2} & \ldots & a_{nn}
-						\end{pmatrix}
-						$$
-
-						Число строк(столбцов) называют <em>порядком матрицы</em>.
 						Note:
-						Прямоугольная матрица 
+						Определение прямоугольной матрицы
 					</script>
 				</section>
 
 				<section data-markdown data-separator-notes="^Note:">
+						<script type="text/template">
+							Пример:
+							--------------
+							$$
+							\begin{pmatrix}
+								1 & 2 & -3\\
+								4 & -5 & 6
+							\end{pmatrix}
+							$$	
+							$$
+							\begin{pmatrix}
+								4 & 7 & 13 & 8\\
+								6 & -9 & 10 & 3\\
+								0 & 17 & 23 & 5
+							\end{pmatrix}
+							$$								
+	
+							Note:
+							Примеры прямоугольных матриц
+						</script>
+					</section>
+
+				<section data-markdown data-separator-notes="^Note:">
+						<script type="text/template">
+							### Квадратная матрица 
+
+							Матрица называется <em>квадратной</em>, если число строк и столбцов совпадает
+							$$
+							A_{n \times n } = \begin{pmatrix}
+								a_{11} & a_{12} & \ldots & a_{1n}\\
+								a_{21} & a_{22} & \ldots & a_{2n}\\
+								&&\ldots& \\
+								a_{n1} & a_{n2} & \ldots & a_{nn}
+							\end{pmatrix}
+							$$							
+							Число строк(столбцов) называют <em>порядком матрицы</em>
+
+							Note:
+							Определение квадратной матрицы
+						</script>
+					</section>
+
+					<section data-markdown data-separator-notes="^Note:">
+							<script type="text/template">
+								Пример:
+								--------------
+
+								$$
+								\begin{pmatrix}
+									0 & 3 \\
+									14 & -9
+								\end{pmatrix}
+								$$	
+								$$
+								\begin{pmatrix}
+									4 & -5 & 6\\
+									56 & 2 & -10\\
+									1 & 2 & 3
+								\end{pmatrix}
+								$$	
+																	
+								Note:
+								Примеры квадратных матриц
+							</script>
+						</section>
+
+				<section data-markdown data-separator-notes="^Note:">
+						<script type="text/template">
+							### Матрица-строка
+	
+							Матрица, у которой всего одна строка, называется <em>матрицей – строкой</em> (или строковой)
+	
+							$$
+							A_{1 \times n} = \begin{pmatrix}
+								a_{11} & a_{12} & \ldots & a_{1n}
+							\end{pmatrix}
+							$$
+
+							Note:
+							Определение матрицы-строки
+						</script>
+					</section>
+
+				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						### Виды матриц 
-
-						Матрица, у которой всего одна строка, называется <em>матрицей – строкой</em> (или строковой)
-
-						$$
-						A_{1 \times n} = \begin{pmatrix}
-							a_{11} & a_{12} & \ldots & a_{1n}
-						\end{pmatrix}
-						$$
+						### Матрица-столбец
 
 						Матрица, у которой всего один столбец, называется <em>матрицей – столбцом</em> (или столбцовой)
 
@@ -159,14 +243,44 @@
 							a_{n1}
 						\end{pmatrix}
 						$$
+
 						Note:
-						Строковые и столбцовые матрицы
+						Определение матрицы-столбца
 					</script>
 				</section>
 
 				<section data-markdown data-separator-notes="^Note:">
+						<script type="text/template">
+							Пример:
+							--------------
+
+							$$
+							\begin{pmatrix}
+							2 & 9 & 5 & 9 & 7
+							\end{pmatrix}
+							$$
+							$$
+							\begin{pmatrix}
+							3 & -5 & 4 & 6 & 15 & 23
+							\end{pmatrix}
+							$$	
+							$$
+							\begin{pmatrix}
+								3 \\
+								17\\
+								1
+							\end{pmatrix}
+							$$	
+																
+							Note:
+							Примеры матриц-строк
+							
+						</script>
+					</section>
+
+				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						### Виды матриц 
+						### Нулевая матрица
 
 						Матрица, все элементы которой равны нулю, называется <em>нулевой</em>
 
@@ -184,17 +298,16 @@
 						$$
 
 						Note:
-						Нулевая матрица 
+						Определение нулевой матрицы
 					</script>
 				</section>
 
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						### Виды матриц 
+						### Верхняя квадратная матрица 
 
-						<em>Главной диагональю</em> квадратной матрицы назовём диагональ, идущую из левого верхнего в правый нижний угол
-
-						Квадратная матрица, у которой все элементы, лежащие ниже главной диагонали, равны нулю, называется <em>верхней квадратной матрицей</em>
+						Квадратная матрица, у которой все элементы, лежащие ниже главной диагонали (идущую из левого верхнего в правый нижний угол),
+						равны нулю, называется <em>верхней квадратной матрицей</em>
 
 						$$
 						A_{n \times n } = \begin{pmatrix}
@@ -207,13 +320,38 @@
 						$$
 						
 						Note:
-						Верхняя квадратная матрица 
+						Определние верхней квадратной матрицы
 					</script>
 				</section>
 
 				<section data-markdown data-separator-notes="^Note:">
+						<script type="text/template">
+							Пример:
+							--------------
+							$$
+							\begin{pmatrix}
+								1 & 2 & -3\\
+								0 & -5 & 6\\
+								0 & 0 & 7
+							\end{pmatrix}
+							$$	
+							$$
+							\begin{pmatrix}
+								4 & 7 & 13 & 8\\
+								0 & -9 & 10 & 3\\
+								0 & 0 & 23 & 5\\
+								0 & 0 & 0 & 8
+							\end{pmatrix}
+							$$								
+	
+							Note:
+							Примеры верхних квадратных матриц матриц
+						</script>
+					</section>
+
+				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						### Виды матриц 
+						### Нижняя квадратная матрица 
 
 						Квадратная матрица, у которой все элементы, лежащие выше главной диагонали, равны нулю, называется <em>нижней квадратной матрицей</em>
 
@@ -228,13 +366,39 @@
 						$$
 						
 						Note:
-						Нижняя квадратная матрица 
+						Квадратная матрица, у которой все элементы, лежащие выше главной диагонали,
+						равны нулю, называется нижней квадратной матрицей
 					</script>
 				</section>
 
 				<section data-markdown data-separator-notes="^Note:">
+						<script type="text/template">
+							Пример:
+							--------------
+							$$
+							\begin{pmatrix}
+								14 & 0 & 0\\
+								13 & -5 & 0\\
+								1 & 2 & -3
+							\end{pmatrix}
+							$$	
+							$$
+							\begin{pmatrix}
+								12 & 0 & 0 & 0\\
+								5 & 4 & 0 & 0\\
+								10 & -9 & 7 & 0\\
+								4 & 7 & 13 & 8
+							\end{pmatrix}
+							$$								
+	
+							Note:
+							Примеры нижних квадратных матриц 
+						</script>
+					</section>
+
+				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						### Виды матриц 
+						### Диагональная матрица 
 
 						Квадратная матрица, у которой все элементы,кроме, быть может, стоящих на главной диагонали, равны нулю, <em>называется диагональной матрицей</em>
 
@@ -249,13 +413,39 @@
 						$$
 						
 						Note:
-						Диагональная матрица 
+						Квадратная матрица, у которой все элементы,кроме, быть может, стоящих на главной диагонали,
+						равны нулю, называется диагональной матрицей
 					</script>
 				</section>
 
 				<section data-markdown data-separator-notes="^Note:">
+						<script type="text/template">
+							Пример:
+							--------------
+							$$
+							\begin{pmatrix}
+								14 & 0 & 0\\
+								0 & -5 & 0\\
+								0 & 0 & -3
+							\end{pmatrix}
+							$$	
+							$$
+							\begin{pmatrix}
+								12 & 0 & 0 & 0\\
+								0 & 13 & 0 & 0\\
+								0 & 0 & 7 & 0\\
+								0 & 0 & 0 & 8
+							\end{pmatrix}
+							$$								
+	
+							Note:
+							Примеры диагональных матриц
+						</script>
+					</section>
+
+				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						### Виды матриц 
+						### Единичная матрица 
 
 						Диагональная матрица, у которой все диагональные элементы равны единице, называется <em>единичной матрицей</em> и обозначается буквой $E$
 
@@ -270,7 +460,7 @@
 						$$
 						
 						Note:
-						Единичная матрица 
+						Определение единичной матрицы
 					</script>
 				</section>
 
@@ -288,8 +478,15 @@
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
 						### Сумма матриц
-						
-						
+
+						Суммой матриц $A$ и$B$ одного размера называется матрица $C=A+B $ такого же размера, получаемая из исходных путем сложения соответствующих элементов:
+						$$
+						A_{m \times n} + B_{m \times n} = C_{m \times n},\text{где}
+						$$						
+						$$
+						c_{ij} = a_{ij} + b_{ij}, i = \overline{1,m}, j = \overline{1,n}
+						$$
+					
 						Note:
 						Суммой двух матриц называется матрица, каждый элемент которой равен сумме соответствующих элементов складываемых матриц. 
 						Складывать можно только матрицы с одинаковой размерностью, то есть число строк и столбцов первой матрицы должно быть равно 
@@ -297,8 +494,109 @@
 					</script>
 				</section>
 
+				<section data-markdown data-separator-notes="^Note:">
+						<script type="text/template">
+							### Алгоритм нахождения суммы матриц
 
-				
+							$$
+							\begin{pmatrix}
+							a_{11} & a_{12} & \ldots & a_{1n} \\
+							a_{21} & a_{22} & \ldots & a_{2n}\\
+							& \ldots &  \\
+							a_{m1} & a_{m2} & \ldots & a_{mn}
+							\end{pmatrix} +
+							\begin{pmatrix}
+							b_{11} & b_{12} & \ldots & b_{1n} \\
+							b_{21} & b_{22} & \ldots & b_{2n}\\
+							& \ldots &  \\
+							b_{m1} & b_{m2} & \ldots & b_{mn}
+							\end{pmatrix} =
+							$$
+
+							$$
+							=\begin{pmatrix}
+							a_{11} + b_{11} & a_{12} + b_{12} & \ldots & a_{1n} + b_{1n} \\
+							a_{21} + b_{21} & a_{22} + b_{22} & \ldots & a_{2n} + b_{2n}\\
+							& \ldots &  \\
+							a_{m1} + b_{m1} & a_{m2} + b_{m2} & \ldots & a_{mn} + b_{mn}
+							\end{pmatrix}
+							$$
+														
+							Note:
+							Алгоритм нахождения суммы матриц
+						</script>
+					</section>
+
+				<section>
+						<h3>Пример:</h3>
+
+						$$
+						\begin{pmatrix}
+							1 & 2 & 3\\
+							4 & 5 & 6
+						\end{pmatrix} 
+						+ 
+						\begin{pmatrix}
+							1 & 2 & 3\\
+							4 & 5 & 6
+						\end{pmatrix}
+						= 
+						$$			
+						<output id="SumMatrixOutput"></output>
+
+						<aside class="notes">
+							Программа по нахождению суммы матриц
+						</aside>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:">
+						<script type="text/template">
+							### Произведение матриц
+							
+							Произведением матрицы $A_{m \times n}$ на матрицу $B_{n \times k}$ называется матрица $C_{m \times k}$ такая, что элемент матрицы $C$, стоящий в$i$-ой строке и 
+							$j$-ом столбце, равен сумме произведений элементов $i$-ой строки матрицы $A$ на соответствующие элементы $j$-ого столбца матрицы $B$
+							$$
+							c_{ij} = \sum_{r=1}^n a_{ir}b_{rj} (i =\overline{1,m}, j = \overline{1,k})
+							$$
+							
+							Note:
+							Произведением матрицы $A$, размерности $m$ на $n$, на матрицу $B$, размерности $n$ на $k$ называется матрица $C$, размерности $m$ на $k$, такая, 
+							что элемент матрицы $C$, стоящий в $i$-ой строке и $j$-ом столбце, т.е. элемент $c_{ij}$, равен сумме произведений элементов $i$-ой строки 
+							матрицы $A$ на соответствующие элементы $j$-ого столбца матрицы $B$;
+							Умножать матрицы можно тогда и только тогда, когда количество столбцов первой матрицы равно количеству строк второй матрицы.
+						</script>
+					</section>
+
+					<section data-markdown data-separator-notes="^Note:">
+							<script type="text/template">
+								### Алгоритм нахождения произведения матриц
+															
+								Note:
+								Алгоритм нахождения произведения матриц
+							</script>
+						</section>
+
+					<section>
+							<h3>Пример:</h3>
+
+							<output id="SumMatrixOutput"></output>
+
+							<aside class="notes">
+								Программа по нахождению произведения матриц
+							</aside>
+					</section>
+
+					<section data-markdown data-separator-notes="^Note:">
+							<script type="text/template">
+								### Определитель матрицы
+		
+								
+							
+								Note:
+								
+							</script>
+						</section>
+
 
 					<section data-markdown data-separator-notes="^Note:">
 						<script type="text/template">
@@ -315,6 +613,10 @@
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 		<script src="js/lib.js"></script>
+		<!-- Библиотека для математики -->
+		<script src="lib/js/math.min.js"></script>
+		<!-- Библиотека для математики -->
+		<script src="lib/js/algebrite.bundle-for-browser.js"></script>
 
 		<script>
 			// More info about config & dependencies:
@@ -342,40 +644,7 @@
                 transitions: true, //Установить меню анимации
                 openButton: true, //Скрыть кнопку меню
                 keyboard: true, //Открытие меню по кнопке m
-                // themes: [{
-                //     name: 'Black',
-                //     theme: 'css/theme/black.css'
-                // }, {
-                //     name: 'White',
-                //     theme: 'css/theme/white.css'
-                // }, {
-                //     name: 'League',
-                //     theme: 'css/theme/league.css'
-                // }, {
-                //     name: 'Sky',
-                //     theme: 'css/theme/sky.css'
-                // }, {
-                //     name: 'Beige',
-                //     theme: 'css/theme/beige.css'
-                // }, {
-                //     name: 'Simple',
-                //     theme: 'css/theme/simple.css'
-                // }, {
-                //     name: 'Serif',
-                //     theme: 'css/theme/serif.css'
-                // }, {
-                //     name: 'Blood',
-                //     theme: 'css/theme/blood.css'
-                // }, {
-                //     name: 'Night',
-                //     theme: 'css/theme/night.css'
-                // }, {
-                //     name: 'Moon',
-                //     theme: 'css/theme/moon.css'
-                // }, {
-                //     name: 'Solarized',
-                //     theme: 'css/theme/solarized.css'
-                // }],
+                
             },
 
 				// load dependencies
@@ -426,7 +695,19 @@
 				]
 			});
 
-
+			let SumMatrix = ()=>{
+				let A = [[1,2,3],[4,5,6]];
+				let B = [[1,2,3],[4,5,6]];
+				let m = A.length;
+				n = A[0].length;
+				C = [];
+				for (let i = 0; i < m; i++){
+					C[i]= [];
+					for (let j = 0; j < n; j++)
+					C[i][j] = A[i][j]+B[i][j];
+				}
+				return C;
+			}     						
 
 			 Reveal.configure({
 				 keyboard: {
@@ -438,10 +719,25 @@
 				 }
 			 });
 
-			//Запускаем программы только после полной загрузки
-			window.onload = () =>  {
 
-			}
+				document.querySelector('#noteswitch').onclick = showNodes;
+				Reveal.configure({
+					keyboard: {
+						68: showNodes
+					}
+				});
+
+				$('h3').each((i, j) => {$(i).html(`
+					<span class="offscreen">Заголовок слайда.</span>
+						${$(i).text()}
+					<span class="offscreen">.</span>
+				`)});
+
+				$('aside').after(`<span class="offscreen">
+					Конец слайда. Для продолжения нажмите
+					<kbd>Space</kbd>
+				</span>`);
+
 		</script>
 	</body>
 </html>
