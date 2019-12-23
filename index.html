@@ -12,6 +12,10 @@
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/sky.css">
 
+		<!--Fonts-->
+		<link rel="stylesheet" 
+		href="css/font-awesome-4.3.0/css/font-awesome.min.css">
+
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
@@ -49,7 +53,7 @@
 	</head>
 	<body>
 		<div class="reveal">
-
+				<!-- Кнопка для включения и отключения субтитр -->
 				<div class="chalkboard-button" id="toggle-chalkboard" 
 				style="position: fixed; z-index: 30; font-size: 22px;
 				left: 60px; bottom: 32px;" >
@@ -63,22 +67,18 @@
 			<div class="slides">
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						Алгебра
-						==================
-						
-						
+						# Алгебра
+												
 						Note:
 						Алгебра
 					</script>
 				</section>
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						Матрицы
-						--------------
-						
+						## Матрицы
 						
 						Note:
-						Матрицы
+						Определение матрицы
 					</script>
 				</section>
 				<section data-markdown data-separator-notes="^Note:">
@@ -91,13 +91,14 @@
 						Обозначают $A_{n \times m}$
 
 						Note:
-						Определение матрицы
+						Матрицей размера н на м называется прямоугольная таблица специального вида, состоящая из н строк и м столбцов, заполненная числами, где 
+						количество строк и столбцов задают размеры матрицы
 					</script>
 				</section>
 
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						### Определение матрицы
+						### Элементы матрицы
 
 						Числа, составляющие матрицу, называются <em>элементами матрицы</em>.
 						Их удобно снабжать двумя индексами $a_{ij}$: первый указывает номер строки, а второй – номер столбца
@@ -112,7 +113,8 @@
 						$$
 
 						Note:
-						Определение элементов матрицы
+						Числа, составляющие матрицу, называются элементами матрицы.
+						Их удобно снабжать двумя индексами а итое,житое: первый указывает номер строки, а второй – номер столбца
 					</script>
 				</section>
 				<section data-markdown data-separator-notes="^Note:">
@@ -141,13 +143,13 @@
 						$$	
 						
 						Note:
-						Определение прямоугольной матрицы
+						Матрица, в которой число строк не равно числу столбцов, называется прямоугольной
 					</script>
 				</section>
 
 				<section data-markdown data-separator-notes="^Note:">
 						<script type="text/template">
-							Пример:
+							Примеры:
 							--------------
 							$$
 							\begin{pmatrix}
@@ -184,13 +186,13 @@
 							Число строк(столбцов) называют <em>порядком матрицы</em>
 
 							Note:
-							Определение квадратной матрицы
+							Матрица называется квадратной, если число строк и столбцов совпадает
 						</script>
 					</section>
 
 					<section data-markdown data-separator-notes="^Note:">
 							<script type="text/template">
-								Пример:
+								Примеры:
 								--------------
 
 								$$
@@ -225,7 +227,7 @@
 							$$
 
 							Note:
-							Определение матрицы-строки
+							Матрица, у которой всего одна строка, называется матрицей – строкой (или строковой)
 						</script>
 					</section>
 
@@ -245,13 +247,13 @@
 						$$
 
 						Note:
-						Определение матрицы-столбца
+						Матрица, у которой всего один столбец, называется матрицей – столбцом (или столбцовой)
 					</script>
 				</section>
 
 				<section data-markdown data-separator-notes="^Note:">
 						<script type="text/template">
-							Пример:
+							Примеры:
 							--------------
 
 							$$
@@ -273,7 +275,7 @@
 							$$	
 																
 							Note:
-							Примеры матриц-строк
+							Примеры матриц-строк и матриц-столбцов
 							
 						</script>
 					</section>
@@ -298,7 +300,7 @@
 						$$
 
 						Note:
-						Определение нулевой матрицы
+						Матрица, все элементы которой равны нулю, называется нулевой
 					</script>
 				</section>
 
@@ -320,13 +322,14 @@
 						$$
 						
 						Note:
-						Определние верхней квадратной матрицы
+						Квадратная матрица, у которой все элементы, лежащие ниже главной диагонали (идущую из левого верхнего в правый нижний угол),
+						равны нулю, называется верхней квадратной матрицей
 					</script>
 				</section>
 
 				<section data-markdown data-separator-notes="^Note:">
 						<script type="text/template">
-							Пример:
+							Примеры:
 							--------------
 							$$
 							\begin{pmatrix}
@@ -373,7 +376,7 @@
 
 				<section data-markdown data-separator-notes="^Note:">
 						<script type="text/template">
-							Пример:
+							Примеры:
 							--------------
 							$$
 							\begin{pmatrix}
@@ -420,7 +423,7 @@
 
 				<section data-markdown data-separator-notes="^Note:">
 						<script type="text/template">
-							Пример:
+							Примеры:
 							--------------
 							$$
 							\begin{pmatrix}
@@ -460,18 +463,18 @@
 						$$
 						
 						Note:
-						Определение единичной матрицы
+						Диагональная матрица, у которой все диагональные элементы равны единице, называется единичной матрицей и обозначается буквой $E$
 					</script>
 				</section>
 
 				</section>
 				<section data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
-						Операции с матрицами
+						Операции над матрицами
 						---------------------
 												
 						Note:
-						Операции с матрицами 
+						Операции над матрицами 
 					</script>
 				</section>
 
@@ -479,12 +482,12 @@
 					<script type="text/template">
 						### Сумма матриц
 
-						Суммой матриц $A$ и$B$ одного размера называется матрица $C=A+B $ такого же размера, получаемая из исходных путем сложения соответствующих элементов:
+						<em>Суммой матриц</em> $A$ и$B$ одного размера называется матрица $C=A+B $ такого же размера, получаемая из исходных путем сложения соответствующих элементов:
 						$$
 						A_{m \times n} + B_{m \times n} = C_{m \times n},\text{где}
 						$$						
 						$$
-						c_{ij} = a_{ij} + b_{ij}, i = \overline{1,m}, j = \overline{1,n}
+						c_{ij} = a_{ij} + b_{ij}, \text{где }i = \overline{1,m}, j = \overline{1,n}
 						$$
 					
 						Note:
@@ -494,56 +497,74 @@
 					</script>
 				</section>
 
-				<section data-markdown data-separator-notes="^Note:">
-						<script type="text/template">
-							### Алгоритм нахождения суммы матриц
-
-							$$
-							\begin{pmatrix}
-							a_{11} & a_{12} & \ldots & a_{1n} \\
-							a_{21} & a_{22} & \ldots & a_{2n}\\
-							& \ldots &  \\
-							a_{m1} & a_{m2} & \ldots & a_{mn}
-							\end{pmatrix} +
-							\begin{pmatrix}
-							b_{11} & b_{12} & \ldots & b_{1n} \\
-							b_{21} & b_{22} & \ldots & b_{2n}\\
-							& \ldots &  \\
-							b_{m1} & b_{m2} & \ldots & b_{mn}
-							\end{pmatrix} =
-							$$
-
-							$$
-							=\begin{pmatrix}
-							a_{11} + b_{11} & a_{12} + b_{12} & \ldots & a_{1n} + b_{1n} \\
-							a_{21} + b_{21} & a_{22} + b_{22} & \ldots & a_{2n} + b_{2n}\\
-							& \ldots &  \\
-							a_{m1} + b_{m1} & a_{m2} + b_{m2} & \ldots & a_{mn} + b_{mn}
-							\end{pmatrix}
-							$$
-														
-							Note:
-							Алгоритм нахождения суммы матриц
-						</script>
-					</section>
-
 				<section>
 						<h3>Пример:</h3>
 
-						$$
-						\begin{pmatrix}
-							1 & 2 & 3\\
-							4 & 5 & 6
-						\end{pmatrix} 
-						+ 
-						\begin{pmatrix}
-							1 & 2 & 3\\
-							4 & 5 & 6
-						\end{pmatrix}
-						= 
-						$$			
-						<output id="SumMatrixOutput"></output>
+						<label> $a_{11}$
+							<input type="text" value="2" id="a_11_s" style="width: 50px;">
+						</label>
+						<label> $a_{12}$
+							<input type="text" value="3" id="a_12_s" style="width: 50px;">
+						</label>
+						<label> $a_{13}$
+							<input type="text" value="4" id="a_13_s" style="width: 50px;">
+						</label>
+						<label> $b_{11}$
+							<input type="text" value="-2" id="b_11_s" style="width: 50px;">
+						</label>
+						<label> $b_{11}$
+							<input type="text" value="-3" id="b_12_s" style="width: 50px;">
+						</label>
+						<label> $b_{11}$
+							<input type="text" value="-4" id="b_13_s" style="width: 50px;">
+						</label>
+						
+						<br>
+						<label> $a_{21}$
+								<input type="text" value="5" id="a_21_s" style="width: 50px;">
+						</label>
+						<label> $a_{22}$
+								<input type="text" value="6" id="a_22_s" style="width: 50px;">
+						</label>
+								<label> $a_{23}$
+								<input type="text" value="7" id="a_23_s" style="width: 50px;">
+						</label>
+						<label> $b_{21}$
+								<input type="text" value="-5" id="b_21_s" style="width: 50px;">
+						</label>
+						<label> $b_{22}$
+								<input type="text" value="-6" id="b_22_s" style="width: 50px;">
+						</label>
+						<label> $b_{23}$
+								<input type="text" value="-7" id="b_23_s" style="width: 50px;">	
+						</label>
+						
+							<br>
+							<label> $a_{31}$
+								<input type="text" value="3" id="a_31_s" style="width: 50px;">
+							</label>
+							<label> $a_{32}$
+								<input type="text" value="4" id="a_32_s" style="width: 50px;">
+							</label>
+							<label> $a_{33}$
+								<input type="text" value="5" id="a_33_s" style="width: 50px;">
+							</label>
+							<label> $b_{31}$
+								<input type="text" value="10" id="b_31_s" style="width: 50px;">
+							</label>
+							<label> $b_{32}$
+								<input type="text" value="-6" id="b_32_s" style="width: 50px;">
+							</label>
+							<label> $b_{33}$
+								<input type="text" value="-7" id="b_33_s" style="width: 50px;">	
+							</label>
 
+							<br>							
+							<label>
+								<input type="button" id="findsum" value="Вычислить сумму">
+							</label>
+							<br>
+							<output id="resultsum"></output>
 						<aside class="notes">
 							Программа по нахождению суммы матриц
 						</aside>
@@ -553,7 +574,7 @@
 						<script type="text/template">
 							### Произведение матриц
 							
-							Произведением матрицы $A_{m \times n}$ на матрицу $B_{n \times k}$ называется матрица $C_{m \times k}$ такая, что элемент матрицы $C$, стоящий в$i$-ой строке и 
+							<em>Произведением матрицы</em> $A_{m \times n}$ на матрицу $B_{n \times k}$ называется матрица $C_{m \times k}$ такая, что элемент матрицы $C$, стоящий в$i$-ой строке и 
 							$j$-ом столбце, равен сумме произведений элементов $i$-ой строки матрицы $A$ на соответствующие элементы $j$-ого столбца матрицы $B$
 							$$
 							c_{ij} = \sum_{r=1}^n a_{ir}b_{rj} (i =\overline{1,m}, j = \overline{1,k})
@@ -567,19 +588,61 @@
 						</script>
 					</section>
 
-					<section data-markdown data-separator-notes="^Note:">
-							<script type="text/template">
-								### Алгоритм нахождения произведения матриц
-															
-								Note:
-								Алгоритм нахождения произведения матриц
-							</script>
-						</section>
-
 					<section>
 							<h3>Пример:</h3>
 
-							<output id="SumMatrixOutput"></output>
+					   <div class="A">
+							<label> $a_{11}$
+								<input type="text" value="2" id="a_11_m" style="width: 50px;">
+							</label>
+							<label> $a_{12}$
+								<input type="text" value="3" id="a_12_m" style="width: 50px;">
+							</label>
+
+							<br>
+							<label> $a_{21}$
+								<input type="text" value="5" id="a_21_m" style="width: 50px;">
+							</label>
+							<label> $a_{22}$
+								<input type="text" value="6" id="a_22_m" style="width: 50px;">
+							</label>
+
+							<br>
+							<label> $a_{31}$
+								<input type="text" value="5" id="a_31_m" style="width: 50px;">
+							</label>
+							<label> $a_{32}$
+								<input type="text" value="6" id="a_32_m" style="width: 50px;">
+							</label>
+					   </div>
+						
+					   <div class="B">
+							<label> $b_{11}$
+								<input type="text" value="-2" id="b_11_m" style="width: 50px;">
+							</label>
+							<label> $b_{11}$
+								<input type="text" value="-3" id="b_12_m" style="width: 50px;">
+							</label>
+							<label> $b_{11}$
+								<input type="text" value="-4" id="b_13_m" style="width: 50px;">
+							</label>
+
+							<br>						
+							<label> $b_{21}$
+								<input type="text" value="-5" id="b_21_m" style="width: 50px;">
+							</label>
+							<label> $b_{22}$
+								<input type="text" value="-6" id="b_22_m" style="width: 50px;">
+							</label>
+							<label> $b_{23}$
+								<input type="text" value="-7" id="b_23_m" style="width: 50px;">	
+							</label>
+						</div>						
+							<label>
+								<input type="button" id="findmult" value="Вычислить произведение">
+							</label>
+							<br>
+							<output id="resultmult"></output>
 
 							<aside class="notes">
 								Программа по нахождению произведения матриц
@@ -587,21 +650,415 @@
 					</section>
 
 					<section data-markdown data-separator-notes="^Note:">
+						<script type="text/template">
+							Определитель матрицы
+							---------------------
+														
+							Note:
+							Определитель матрицы
+						</script>
+					</section>
+
+						<section data-markdown data-separator-notes="^Note:">
 							<script type="text/template">
 								### Определитель матрицы
-		
-								
+
+								Это одна из основных 
+								численных характеристик квадратной матрицы, применяемая при решении многих задач;
+								<br>
+								обозначается $det(A)$ или $\Delta(A)$
 							
 								Note:
-								
+								Определитель матрицы - это одна из основных 
+								численных характеристик квадратной матрицы, применяемая при решении многих задач
+							</script>
+						</section>
+
+						
+
+						<section data-markdown data-separator-notes="^Note:">
+							<script type="text/template">
+								### Определитель матрицы
+
+								В общем случае вычисляется как 
+								$$
+								det(A) = \sum_{\alpha_{1},\ldots, \alpha_{n}} (-1)^{N(\alpha_{1},\ldots ,\alpha_{n})}a_{\alpha_{1}1}a_{\alpha_{2}2}\ldots a_{\alpha_{n}n},
+								$$
+								где	 $(\alpha_{1},\ldots, \alpha_{n})$ - перестановка чисел от 1 до $n$, $N(\alpha_{1},\ldots ,\alpha_{n})$- число инверсий 
+								в перестановке, суммирование идёт по всем возможным перестановкам порядка $n$
+							
+								Note:
+								Вычисление определителя в общем случае
+							</script>
+						</section>
+
+						<section data-markdown data-separator-notes="^Note:">
+							<script type="text/template">
+								Методы вычисления определителя матрицы
+								-------------------------------------
+															
+								Note:
+								Определитель матрицы
+							</script>
+						</section>
+
+						<section data-markdown data-separator-notes="^Note:">
+							<script type="text/template">
+								### Для матриц 1-го и 2-го порядка
+
+								Для матрицы первого порядка значение определителя равно значению элемента этой матрицы:
+								$$
+								\Delta = |a_{11}| = a_{11}
+								$$
+
+								Для матрицы 2-го порядка  значение определителя равно разности произведений элементов главной и побочной диагоналей:
+								$$
+								\Delta = \begin{vmatrix}
+								a_{11} & a_{12}\\
+								a_{21} & a_{22}
+								\end{vmatrix} =a_{11}a_{22} - a_{21}a_{12}
+								$$
+															
+								Note:
+								Методы вычисления определителя для матриц 1-го и 2-го порядка
+							</script>
+						</section>
+
+						<section data-markdown data-separator-notes="^Note:">
+							<script type="text/template">
+								### Для матриц 3-го порядка
+
+								Правило треугольника:
+								$$
+								\Delta = \begin{vmatrix}
+								a_{11} & a_{12} & a_{13}\\
+								a_{21} & a_{22} & a_{23}\\
+								a_{31} & a_{32} & a_{33}
+								\end{vmatrix} = a_{11}a_{22}a_{33}+ a_{12}a_{23}a_{31}+
+								$$
+								$$
+								+a_{13}a_{21}a_{32} - a_{13}a_{22}a_{31} - a_{11}a_{23}a_{32} - a_{12}a_{21}a_{33}
+								$$
+															
+								Note:
+								Для матрицы 3×3 значение определителя равно сумме произведений элементов главной диагонали и 
+								произведений элементов лежащих на треугольниках с гранью параллельной главной диагонали, от которой 
+								вычитается произведение элементов побочной диагонали и произведение элементов лежащих на треугольниках с гранью параллельной побочной диагонали
+							</script>
+						</section>
+
+						<section data-markdown data-separator-notes="^Note:">
+							<script type="text/template">
+								### Для матриц произвольного размера
+
+								Разложение по $i$-ой строке:
+								$$
+								det(A) = \sum_{j=1}^n a_{ij}A_{ij} 
+								$$
+
+								Разложение по $j$-ому столбцу:
+								$$
+								det(A) = \sum_{i=1}^n a_{ij}A_{ij}
+								$$
+																						
+								Note:
+								1)Сумма произведений элементов строки определителя на их алгебраические дополнения
+								2)Сумма произведений элементов столбца определителя на их алгебраические дополнения
+							</script>
+						</section>
+
+						<section data-markdown data-separator-notes="^Note:">
+							<script type="text/template">
+								### Для матриц произвольного размера
+
+								Используя свойства определителя для элементарных преобразований над строками и столбцами, определитель приводится к треугольному виду,
+								и тогда его значение будет равно произведению элементов стоящих на главной диагонали
+																						
+								Note:
+								3)Используя свойства определителя для элементарных преобразований над строками и столбцами, определитель приводится к треугольному виду,
+								и тогда его значение будет равно произведению элементов стоящих на главной диагонали
 							</script>
 						</section>
 
 
+
+					<section>
+							<h3>Определитель матрицы второго порядка</h3>
+
+							<input type="text" value="2" id="a_11_d2" style="width: 50px;">
+							<input type="text" value="3" id="a_12_d2" style="width: 50px;">								
+							
+							<br>
+							<input type="text" value="5" id="a_21_d2" style="width: 50px;";>
+							<input type="text" value="6" id="a_22_d2" style="width: 50px;">
+									
+							<br>							
+							<label>
+								<input type="button" id="findDetsecond" value="Вычислить">
+							</label>
+							
+							<br>
+							<output id="resultDetsecond"></output>
+
+							<aside class="notes">
+								Прогрмма для нахождения определителя матрицы 2-го порядка
+							</aside>
+					</section>
+					<section>
+							<h3>Определитель матрицы третьего порядка</h3>
+
+							<input type="text" value="1" id="a_11_d3" style="width: 50px;">
+							<input type="text" value="9" id="a_12_d3" style="width: 50px;">
+							<input type="text" value="2" id="a_13_d3" style="width: 50px;">								
+							
+							<br>
+							<input type="text" value="2" id="a_21_d3" style="width: 50px;";>
+							<input type="text" value="4" id="a_22_d3" style="width: 50px;">
+							<input type="text" value="6" id="a_23_d3" style="width: 50px;">
+
+							<br>
+							<input type="text" value="1" id="a_31_d3" style="width: 50px;";>
+							<input type="text" value="7" id="a_32_d3" style="width: 50px;">
+							<input type="text" value="6" id="a_33_d3" style="width: 50px;">
+									
+							<br>							
+							<label>
+								<input type="button" id="findDetthird" value="Вычислить">
+							</label>
+							
+							<br>
+							<output id="resultDetthird"></output>
+
+						<aside class="notes">
+							Прогрмма для нахождения определителя матрицы 3-го порядка
+						</aside>
+					</section>
+					<section>
+						<h3>Определитель матрицы четвертого порядка</h3>
+						
+						<input type="text" value="8" id="a_11_d4" style="width: 50px;">
+						<input type="text" value="-5" id="a_12_d4" style="width: 50px;">
+						<input type="text" value="10" id="a_13_d4" style="width: 50px;">	
+						<input type="text" value="4" id="a_14_d4" style="width: 50px;">								
+						
+						<br>
+						<input type="text" value="1" id="a_21_d4" style="width: 50px;";>
+						<input type="text" value="2" id="a_22_d4" style="width: 50px;">
+						<input type="text" value="3" id="a_23_d4" style="width: 50px;">
+						<input type="text" value="4" id="a_24_d4" style="width: 50px;">	
+
+						<br>
+						<input type="text" value="1" id="a_31_d4" style="width: 50px;";>
+						<input type="text" value="9" id="a_32_d4" style="width: 50px;">
+						<input type="text" value="8" id="a_33_d4" style="width: 50px;">
+						<input type="text" value="3" id="a_34_d4" style="width: 50px;">
+
+						<br>
+						<input type="text" value="12" id="a_41_d4" style="width: 50px;";>
+						<input type="text" value="4" id="a_42_d4" style="width: 50px;">
+						<input type="text" value="3" id="a_43_d4" style="width: 50px;">
+						<input type="text" value="5" id="a_44_d4" style="width: 50px;">
+								
+						<br>							
+						<label>
+							<input type="button" id="findDetfourth" value="Вычислить">
+						</label>
+						
+						<br>
+						<output id="resultDetfourth"></output>
+
+
+						<aside class="notes">
+							Прогрмма для нахождения определителя матрицы 4-го порядка
+						</aside>
+					</section>
+
 					<section data-markdown data-separator-notes="^Note:">
 						<script type="text/template">
-							Спасибо за внимание! 
-						</script>					
+							Исходный код
+							------------
+		
+							Note:
+							Исходный код программ
+						</script>
+					</section>
+
+					<section data-markdown data-separator-notes="^Note:">
+						<script type="text/template">
+							### Нахождение суммы матриц
+							
+							```
+							let SumMatrix = ()=>{
+								let a11 = +document.querySelector('#a_11_s').value;
+								let a12 = +document.querySelector('#a_12_s').value;
+								let a13 = +document.querySelector('#a_13_s').value;
+								let a21 = +document.querySelector('#a_21_s').value;
+								let a22 = +document.querySelector('#a_22_s').value;
+								let a23 = +document.querySelector('#a_23_s').value;
+								let a31 = +document.querySelector('#a_31_s').value;
+								let a32 = +document.querySelector('#a_32_s').value;
+								let a33 = +document.querySelector('#a_33_s').value;
+								let b11 = +document.querySelector('#b_11_s').value;
+								let b12 = +document.querySelector('#b_12_s').value;
+								let b13 = +document.querySelector('#b_13_s').value;
+								let b21 = +document.querySelector('#b_21_s').value;
+								let b22 = +document.querySelector('#b_22_s').value;
+								let b23 = +document.querySelector('#b_23_s').value;
+								let b31 = +document.querySelector('#b_31_s').value;
+								let b32 = +document.querySelector('#b_32_s').value;
+								let b33 = +document.querySelector('#b_33_s').value;
+								const A = [[a11,a12,a13],[a21,a22,a23],[a31,a32,a33]];
+								const B = [[b11,b12,b13],[b21,b22,b23],[b31,b32,b33]];
+								const C = [[],[],[]];
+								for (let i = 0; i < 3; i++){
+									for (let j = 0; j < 3; j++)
+									C[i][j] = A[i][j]+B[i][j];
+								}				
+								document.querySelector('#resultsum').innerHTML = '';
+								for(let i = 0; i < 3; i++){
+									for (let j = 0; j < 3; j++)	{
+										let c = "c_{" + (i+1).toString() + (j+1).toString() + "}"; 
+										document.querySelector('#resultsum').innerHTML += katex.renderToString(c) +"="+ C[i][j]+ "  ";
+									}		
+																
+								document.querySelector('#resultsum').innerHTML += "<br\>";
+								}
+				
+							} 
+							```
+							Note: Исходный код программы для нахождения суммы матриц 3-го порядка
+						</script>
+					</section>
+
+					<section data-markdown data-separator-notes="^Note:">
+						<script type="text/template">
+							### Нахождение произведения матриц
+							
+							```
+							let MultMatrix = ()=>{
+								let a11 = +document.querySelector('#a_11_m').value;
+								let a12 = +document.querySelector('#a_12_m').value;
+								let a21 = +document.querySelector('#a_21_m').value;
+								let a22 = +document.querySelector('#a_22_m').value;
+								let a31 = +document.querySelector('#a_31_m').value;
+								let a32 = +document.querySelector('#a_32_m').value;
+								let b11 = +document.querySelector('#b_11_m').value;
+								let b12 = +document.querySelector('#b_12_m').value;
+								let b13 = +document.querySelector('#b_13_m').value;
+								let b21 = +document.querySelector('#b_21_m').value;
+								let b22 = +document.querySelector('#b_22_m').value;
+								let b23 = +document.querySelector('#b_23_m').value;
+								const A = [[a11,a12],[a21,a22],[a31,a32]];
+								const B = [[b11,b12,b13],[b21,b22,b23]];
+								const C = [[],[],[]];
+								let rowsA = A.length, colsA = A[0].length, rowsB = B.length, colsB = B[0].length;
+									for (let k = 0; k < colsB; k++){
+										 for (let i = 0; i < rowsA; i++){
+											let t = 0;
+											  for (let j = 0; j < rowsB; j++) 
+												t += A[i][j]*B[j][k];
+										  C[i][k] = t;
+										}
+									 }
+									 document.querySelector('#resultmult').innerHTML = '';
+								for(let i = 0; i < 3; i++){
+									for (let j = 0; j < 3; j++){
+										let c = "c_{" + (i+1).toString() + (j+1).toString() + "}"; 
+										document.querySelector('#resultmult').innerHTML += katex.renderToString(c) + "="+ C[i][j]+ "  ";
+									}						
+								document.querySelector('#resultmult').innerHTML += "<br\>";
+								}				
+							}       
+							```
+							Note: Исходный код программы для нахождения произведения матриц 3-го порядка
+						</script>
+					</section>
+
+					<section data-markdown data-separator-notes="^Note:">
+						<script type="text/template">
+							### Вычисление определителя матрицы 2-го порядка
+							
+							```
+							let DetSecond = ()=>{
+								let a11 = +document.querySelector('#a_11_d2').value;
+								let a12 = +document.querySelector('#a_12_d2').value;
+								let a21 = +document.querySelector('#a_21_d2').value;
+								let a22 = +document.querySelector('#a_22_d2').value;
+								const A = [[a11,a12],[a21,a22]];
+								let DT = math.det(A);
+								document.querySelector('#resultDetsecond').innerHTML = DT;
+							}
+							```
+							Note: Исходный код программы для нахождения определителя матриц 2-го порядка
+						</script>
+
+					</section>
+
+					<section data-markdown data-separator-notes="^Note:">
+						<script type="text/template">
+							### Вычисление определителя матрицы 3-го порядка
+							
+							```
+							let DetThird = ()=>{
+								let a11 = +document.querySelector('#a_11_d3').value;
+								let a12 = +document.querySelector('#a_12_d3').value;
+								let a13 = +document.querySelector('#a_13_d3').value;
+								let a21 = +document.querySelector('#a_21_d3').value;
+								let a22 = +document.querySelector('#a_22_d3').value;
+								let a23 = +document.querySelector('#a_23_d3').value;
+								let a31 = +document.querySelector('#a_31_d3').value;
+								let a32 = +document.querySelector('#a_32_d3').value;
+								let a33 = +document.querySelector('#a_33_d3').value;
+								const A = [[a11,a12,a13],[a21,a22,a23],[a31,a32,a33]];
+								let DT = math.det(A);
+								document.querySelector('#resultDetthird').innerHTML = DT;
+							}
+							```
+							Note: Исходный код программы для нахождения определителя матриц 3-го порядка
+						</script>
+					</section>
+
+					<section data-markdown data-separator-notes="^Note:">
+						<script type="text/template">
+							### Вычисление определителя матрицы 4-го порядка
+							
+							```
+							let DetFourth = ()=>{
+								let a11 = +document.querySelector('#a_11_d4').value;
+								let a12 = +document.querySelector('#a_12_d4').value;
+								let a13 = +document.querySelector('#a_13_d4').value;
+								let a14 = +document.querySelector('#a_14_d4').value;
+								let a21 = +document.querySelector('#a_21_d4').value;
+								let a22 = +document.querySelector('#a_22_d4').value;
+								let a23 = +document.querySelector('#a_23_d4').value;
+								let a24 = +document.querySelector('#a_24_d4').value;
+								let a31 = +document.querySelector('#a_31_d4').value;
+								let a32 = +document.querySelector('#a_32_d4').value;
+								let a33 = +document.querySelector('#a_33_d4').value;
+								let a34 = +document.querySelector('#a_34_d4').value;
+								let a41 = +document.querySelector('#a_41_d4').value;
+								let a42 = +document.querySelector('#a_42_d4').value;
+								let a43 = +document.querySelector('#a_43_d4').value;
+								let a44 = +document.querySelector('#a_44_d4').value;
+								const A = [[a11,a12,a13,a14],[a21,a22,a23,a24],[a31,a32,a33,a34],[a41,a42,a43,a44]];
+								let DT = math.det(A);
+								document.querySelector('#resultDetfourth').innerHTML = DT;
+							} 
+							```
+							Note: Исходный код программы для нахождения определителя матриц 4-го порядка
+						</script>
+					</section>
+
+					<section data-markdown data-separator-notes="^Note:" data-menu-title="Заключительный слайд">
+						<script type="text/template">
+							Спасибо за внимание!
+							Note:
+							Спасибо за внимание!
+						</script>
+						<span class="offscreen">
+							Конец презентации
+						</span>
+											
 					</section>
 
 
@@ -696,30 +1153,142 @@
 			});
 
 			let SumMatrix = ()=>{
-				let A = [[1,2,3],[4,5,6]];
-				let B = [[1,2,3],[4,5,6]];
-				let m = A.length;
-				n = A[0].length;
-				C = [];
-				for (let i = 0; i < m; i++){
-					C[i]= [];
-					for (let j = 0; j < n; j++)
+				let a11 = +document.querySelector('#a_11_s').value;
+				let a12 = +document.querySelector('#a_12_s').value;
+				let a13 = +document.querySelector('#a_13_s').value;
+				let a21 = +document.querySelector('#a_21_s').value;
+				let a22 = +document.querySelector('#a_22_s').value;
+				let a23 = +document.querySelector('#a_23_s').value;
+				let a31 = +document.querySelector('#a_31_s').value;
+				let a32 = +document.querySelector('#a_32_s').value;
+				let a33 = +document.querySelector('#a_33_s').value;
+				let b11 = +document.querySelector('#b_11_s').value;
+				let b12 = +document.querySelector('#b_12_s').value;
+				let b13 = +document.querySelector('#b_13_s').value;
+				let b21 = +document.querySelector('#b_21_s').value;
+				let b22 = +document.querySelector('#b_22_s').value;
+				let b23 = +document.querySelector('#b_23_s').value;
+				let b31 = +document.querySelector('#b_31_s').value;
+				let b32 = +document.querySelector('#b_32_s').value;
+				let b33 = +document.querySelector('#b_33_s').value;
+				const A = [[a11,a12,a13],[a21,a22,a23],[a31,a32,a33]];
+				const B = [[b11,b12,b13],[b21,b22,b23],[b31,b32,b33]];
+				const C = [[],[],[]];
+				for (let i = 0; i < 3; i++){
+					for (let j = 0; j < 3; j++)
 					C[i][j] = A[i][j]+B[i][j];
+				}				
+				document.querySelector('#resultsum').innerHTML = '';
+				for(let i = 0; i < 3; i++){
+					for (let j = 0; j < 3; j++)	{
+						let c = "c_{" + (i+1).toString() + (j+1).toString() + "}"; 
+						document.querySelector('#resultsum').innerHTML += katex.renderToString(c) +"="+ C[i][j]+ "  ";
+					}		
+												
+				document.querySelector('#resultsum').innerHTML += "<br\>";
 				}
-				return C;
-			}     						
 
-			 Reveal.configure({
-				 keyboard: {
-					 68: function(){
-						 Reveal.configure ({
-							 showNotes: (Reveal.getConfig().showNotes ? false:true)
-						 });
-					 }
-				 }
-			 });
+			} 
 
+			let MultMatrix = ()=>{
+				let a11 = +document.querySelector('#a_11_m').value;
+				let a12 = +document.querySelector('#a_12_m').value;
+				let a21 = +document.querySelector('#a_21_m').value;
+				let a22 = +document.querySelector('#a_22_m').value;
+				let a31 = +document.querySelector('#a_31_m').value;
+				let a32 = +document.querySelector('#a_32_m').value;
+				let b11 = +document.querySelector('#b_11_m').value;
+				let b12 = +document.querySelector('#b_12_m').value;
+				let b13 = +document.querySelector('#b_13_m').value;
+				let b21 = +document.querySelector('#b_21_m').value;
+				let b22 = +document.querySelector('#b_22_m').value;
+				let b23 = +document.querySelector('#b_23_m').value;
+				const A = [[a11,a12],[a21,a22],[a31,a32]];
+				const B = [[b11,b12,b13],[b21,b22,b23]];
+				const C = [[],[],[]];
+				let rowsA = A.length, colsA = A[0].length, rowsB = B.length, colsB = B[0].length;
+    				for (let k = 0; k < colsB; k++){
+     					for (let i = 0; i < rowsA; i++){
+        					let t = 0;
+         				 	for (let j = 0; j < rowsB; j++) 
+								t += A[i][j]*B[j][k];
+          				C[i][k] = t;
+        				}
+     				}
+					 document.querySelector('#resultmult').innerHTML = '';
+				for(let i = 0; i < 3; i++){
+					for (let j = 0; j < 3; j++){
+						let c = "c_{" + (i+1).toString() + (j+1).toString() + "}"; 
+						document.querySelector('#resultmult').innerHTML += katex.renderToString(c) + "="+ C[i][j]+ "  ";
+					}						
+				document.querySelector('#resultmult').innerHTML += "<br\>";
+				}
 
+			}       
+
+			let DetSecond = ()=>{
+				let a11 = +document.querySelector('#a_11_d2').value;
+				let a12 = +document.querySelector('#a_12_d2').value;
+				let a21 = +document.querySelector('#a_21_d2').value;
+				let a22 = +document.querySelector('#a_22_d2').value;
+				const A = [[a11,a12],[a21,a22]];
+				let DT = math.det(A);
+				document.querySelector('#resultDetsecond').innerHTML = DT;
+			}
+
+			let DetThird = ()=>{
+				let a11 = +document.querySelector('#a_11_d3').value;
+				let a12 = +document.querySelector('#a_12_d3').value;
+				let a13 = +document.querySelector('#a_13_d3').value;
+				let a21 = +document.querySelector('#a_21_d3').value;
+				let a22 = +document.querySelector('#a_22_d3').value;
+				let a23 = +document.querySelector('#a_23_d3').value;
+				let a31 = +document.querySelector('#a_31_d3').value;
+				let a32 = +document.querySelector('#a_32_d3').value;
+				let a33 = +document.querySelector('#a_33_d3').value;
+				const A = [[a11,a12,a13],[a21,a22,a23],[a31,a32,a33]];
+				let DT = math.det(A);
+				document.querySelector('#resultDetthird').innerHTML = DT;
+			}
+
+			let DetFourth = ()=>{
+				let a11 = +document.querySelector('#a_11_d4').value;
+				let a12 = +document.querySelector('#a_12_d4').value;
+				let a13 = +document.querySelector('#a_13_d4').value;
+				let a14 = +document.querySelector('#a_14_d4').value;
+				let a21 = +document.querySelector('#a_21_d4').value;
+				let a22 = +document.querySelector('#a_22_d4').value;
+				let a23 = +document.querySelector('#a_23_d4').value;
+				let a24 = +document.querySelector('#a_24_d4').value;
+				let a31 = +document.querySelector('#a_31_d4').value;
+				let a32 = +document.querySelector('#a_32_d4').value;
+				let a33 = +document.querySelector('#a_33_d4').value;
+				let a34 = +document.querySelector('#a_34_d4').value;
+				let a41 = +document.querySelector('#a_41_d4').value;
+				let a42 = +document.querySelector('#a_42_d4').value;
+				let a43 = +document.querySelector('#a_43_d4').value;
+				let a44 = +document.querySelector('#a_44_d4').value;
+				const A = [[a11,a12,a13,a14],[a21,a22,a23,a24],[a31,a32,a33,a34],[a41,a42,a43,a44]];
+				let DT = math.det(A);
+				document.querySelector('#resultDetfourth').innerHTML = DT;
+			}    						
+
+			 let showNodes = () => {
+				Reveal.configure({
+					//Навесим событие на клавишу D
+					//Покажим заметки
+					showNotes: (
+						Reveal.getConfig().showNotes ? 
+							false: true
+						)
+				});
+				return false;
+			}
+
+			//Запускаем программы только после полной загрузки
+			window.onload = () =>  {
+
+				//Открываем заметки или по кнопке или по клавише D
 				document.querySelector('#noteswitch').onclick = showNodes;
 				Reveal.configure({
 					keyboard: {
@@ -727,17 +1296,24 @@
 					}
 				});
 
+				//Делаем слайды инклюзивными, заменив заголовок
 				$('h3').each((i, j) => {$(i).html(`
 					<span class="offscreen">Заголовок слайда.</span>
 						${$(i).text()}
 					<span class="offscreen">.</span>
 				`)});
-
 				$('aside').after(`<span class="offscreen">
 					Конец слайда. Для продолжения нажмите
 					<kbd>Space</kbd>
 				</span>`);
 
+				//Функции выполняются, когда отжимается ЛКМ
+				document.querySelector('#findsum').onmouseup = SumMatrix;
+				document.querySelector('#findmult').onmouseup = MultMatrix;
+				document.querySelector('#findDetsecond').onmouseup = DetSecond;
+				document.querySelector('#findDetthird').onmouseup = DetThird;
+				document.querySelector('#findDetfourth').onmouseup = DetFourth;
+			}
 		</script>
 	</body>
 </html>
