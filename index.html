@@ -1178,16 +1178,17 @@
 					for (let j = 0; j < 3; j++)
 					C[i][j] = A[i][j]+B[i][j];
 				}				
-				document.querySelector('#resultsum').innerHTML = '';
-				for(let i = 0; i < 3; i++){
-					for (let j = 0; j < 3; j++)	{
-						let c = "c_{" + (i+1).toString() + (j+1).toString() + "}"; 
-						document.querySelector('#resultsum').innerHTML += katex.renderToString(c) +"="+ C[i][j]+ "  ";
-					}		
-												
-				document.querySelector('#resultsum').innerHTML += "<br\>";
-				}
-
+				let temp = `\\begin{pmatrix}`; //Задаем матрицу
+                let matrixTemp = []; //Массив строк матрицы
+                for(let i = 0; i < 3; i++){
+                    let lineTemp = []; //Массив элементов строки
+                    for (let j = 0; j < 3; j++) {
+                        lineTemp.push(C[i][j]); //Добавляем каждое значение в массив
+                    }
+                    matrixTemp.push(lineTemp.join(' & ')); //Превращаем массив в строку с символом разделителем
+                }
+                temp += `${matrixTemp.join('\\\\')}\\end{pmatrix}`; //Получившиеся строки склеиваем разделителем строки
+                katex.render(temp,document.querySelector('#resultsum')); //Выводим матриц
 			} 
 
 			let MultMatrix = ()=>{
@@ -1215,14 +1216,17 @@
           				C[i][k] = t;
         				}
      				}
-					 document.querySelector('#resultmult').innerHTML = '';
-				for(let i = 0; i < 3; i++){
-					for (let j = 0; j < 3; j++){
-						let c = "c_{" + (i+1).toString() + (j+1).toString() + "}"; 
-						document.querySelector('#resultmult').innerHTML += katex.renderToString(c) + "="+ C[i][j]+ "  ";
-					}						
-				document.querySelector('#resultmult').innerHTML += "<br\>";
-				}
+				let temp = `\\begin{pmatrix}`;
+                let matrixTemp = []; 
+                for(let i = 0; i < 3; i++){
+                    let lineTemp = []; 
+                    for (let j = 0; j < 3; j++) {
+                        lineTemp.push(C[i][j]);
+                    }
+                    matrixTemp.push(lineTemp.join(' & '));
+                }
+                temp += `${matrixTemp.join('\\\\')}\\end{pmatrix}`;
+                katex.render(temp,document.querySelector('#resultmult'));
 
 			}       
 
